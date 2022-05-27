@@ -1,0 +1,126 @@
+﻿//server name
+//DESKTOP-03HV6I6
+// database name VideoGames_Sales_SSAS
+
+// Cau 3.	Tìm ra thông tin top 10 trò chơi có doanh thu lớn nhất trên toàn thể giới.
+SELECT [Measures].[Global Sales] on 0, 
+TOPCOUNT([Dim Video Games].[Name].[Name].members,10,[Measures].[Global Sales]) on 1
+FROM [Data Ware House Videogames Sales];
+
+//cau 1, tim nhung tro choi co luong nguoi choi > 50 
+SELECT [Measures].[User Count] on 0, 
+non empty GENERATE([Dim Video Games].[Name].[Name].members,
+FILTER([Dim Video Games].[Name].[Name].members,[Measures].[User Count]>50)) on 1
+FROM [Data Ware House Videogames Sales];
+
+//cau 2, tim nhung tro choi co so luong ng phe binh > 50 va diem phe binh >10
+SELECT {[Measures].[Critic Count], [Measures].[Critic Score]} on 0, 
+non empty GENERATE([Dim Video Games].[Name].[Name].members,
+FILTER([Dim Video Games].[Name].[Name].members,[Measures].[Critic Count]>50 AND [Measures].[Critic Score]>10)) on 1
+FROM [Data Ware House Videogames Sales];
+
+
+
+//cau 4 tìm kiếm những game có tên bắt đầu bằng chữ F và hiển thị điểm đánh giá và số lượng ng chơi mục đích để so sánh xem điểm đánh giá có tỉ lệ thuận vs số lượng ng chơi k
+select {{[Measures].[Critic Score],[Measures].[User Count]}} on 0, 
+filter([Dim Video Games].[Name].[Name].members,left([Dim Video Games].[Name].currentmember.name,1 )= 'F') on 1
+from [Data Ware House Videogames Sales];
+
+
+//cau 5 sắp xếp giảm dần về điểm đánh giá của những game phát hành năm 2007
+select[Measures].[Critic Score] on columns,
+non empty order({[Dim Video Games].[Name].[Name].members},
+[Measures].[Critic Score],DESC) on rows
+from [Data Ware House Videogames Sales]
+where [Dim Date].[Year Of Release].&[2007.0];
+
+// cau 6 Thong ke doanh thu toan cau theo tung nam
+select [Measures].[Global Sales] on 0,
+generate([Measures].[Global Sales],[Dim Date].[Year Of Release].[Year Of Release].members)on 1
+from [Data Ware House Videogames Sales];
+
+
+// cau 7  Voi moi Nha Phat Trien Game ( Developer), cho biet tro choi co doanh thu cao tren toan the gioi
+// cao nhat
+ select [Measures].[Global Sales] on 0,
+non empty generate ( [Dim Video Games].[Developer].[Developer],
+topcount([Dim Video Games].[Developer].currentmember *
+ [Dim Video Games].[Name].[Name] ,1
+,[Measures].[Global Sales] ))on 1
+from [Data Ware House Videogames Sales];
+
+//cau 8  Tim nhung Nha Phat Hanh Game ( Publisher) co so luong ng choi > 50 nhung doanh thu toan cau lai nho hon 60
+select {[Measures].[User Count],[Measures].[Global Sales]} on columns,
+except (
+filter([Dim Video Games].[Publisher].[Publisher],[Measures].[User Count]>50),
+filter([Dim Video Games].[Publisher].[Publisher],[Measures].[Global Sales]>60)
+)on rows
+from [Data Ware House Videogames Sales];
+// cau 9  Tru nhung tro choi co rating = m, liet ke diem danh gia tu nguoi dung, diem phe binh, doanh thu toan cau cua 
+// cua nhung tro choi con lai trong nam 2012
+select {[Measures].[User Score],[Measures].[Critic Score],[Measures].[Global Sales]} on columns,
+non empty except (
+[Dim Video Games].[Name].[Name],filter([Dim Video Games].[Name].[Name],
+[Dim Video Games].[Rating].&[M]))on rows
+from [Data Ware House Videogames Sales]
+where [Dim Date].[Year Of Release].&[2012.0]; 
+
+//cau 10 Liet ke nhung tro choi co so diem danh gia nguoi dung >30 va doanh thu toan cau > 10
+select {[Measures].[User Score],[Measures].[EU Sales]} on columns, 
+INTERSECT(FILTER([Dim Video Games].[Name].[Name],[Measures].[User Score]>30),
+FILTER([Dim Video Games].[Name].[Name],[Measures].[EU Sales]>10)) on 1
+from [Data Ware House Videogames Sales];
+// cau 11 Liet ke nhung tro choi thuoc nha phat trien bat dau bang chu A, co doanh thu tai JP >2 va 
+//doanh thu toan cau > 10
+select {{[Measures].[Global Sales],[Measures].[JP Sales]}} on 0
+,INTERSECT(filter([Dim Video Games].[Name].[Name].members,[Measures].[Global Sales]>10),INTERSECT(
+filter([Dim Video Games].[Name].[Name].members,left([Dim Video Games].[Name].currentmember.name,1 )= 'A'),
+filter([Dim Video Games].[Name].[Name].members,[Measures].[JP Sales]>2))) on 1
+from [Data Ware House Videogames Sales];
+//cau 12 tim nhung tro choi co doanh thu toan > 5 va dc phat hanh vao nam 2012
+select [Measures].[Global Sales] on columns,
+[Dim Video Games].[Name].[Name].members 
+having  [Measures].[Global Sales] >5  on rows
+from [Data Ware House Videogames Sales]
+where [Dim Date].[Year Of Release].&[2012.0];
+
+//VS
+select [Measures].[Global Sales] on columns,
+FILTER([Dim Video Games].[Name].[Name],[Measures].[Global Sales] >5) on rows
+from [Data Ware House Videogames Sales]
+where [Dim Date].[Year Of Release].&[2012.0];
+
+//cau 13 Trong nam 2009, liet ke nhung tro choi co the loai la Shooter, doanh thu tai NA > 2 nhưng 
+// doanh thu tại JP,EU <2
+
+select {[Measures].[NA Sales],[Measures].[JP Sales],[Measures].[EU Sales]} on columns,
+[Dim Video Games].[Name].[Name].members 
+having [Measures].[NA Sales]>2 
+AND [Measures].[JP Sales]<2 AND [Measures].[EU Sales]<2  on rows
+from [Data Ware House Videogames Sales]
+where  ([Dim Date].[Year Of Release].&[2009.0],[Dim Video Games].[Genre].&[Shooter]);
+
+//MDX
+select {[Measures].[NA Sales],[Measures].[JP Sales],[Measures].[EU Sales]} on columns,
+INTERSECT(FILTER([Dim Video Games].[Name].[Name],[Measures].[NA Sales]>2),
+INTERSECT(FILTER([Dim Video Games].[Name].[Name],[Measures].[JP Sales]<2),
+FILTER([Dim Video Games].[Name].[Name],[Measures].[EU Sales]<2))) on 1
+from [Data Ware House Videogames Sales]
+where  ([Dim Date].[Year Of Release].&[2009.0],[Dim Video Games].[Genre].&[Shooter]);
+//cau 14 Cho biết top 5 trò chơi có thu nhập toàn cầu cao nhất của từng nền tảng
+Select [Measures].[Global Sales] On 0,
+Generate ([Dim Video Games].[Platform].[Platform],
+		  TOPCOUNT ([Dim Video Games].[Platform].CURRENTMEMBER *
+			[Dim Video Games].[Name].[Name] ,5 ,
+			[Measures].[Global Sales])) on 1
+from [Data Ware House Videogames Sales];
+
+//cau 15 Liệt kê top 10 những trò chơi có thể loại là Action, doanh thu toàn cầu > 10 và có số điểm đánh giá của người dùng cũng như người phê bình > 10.
+// cau 15 liet ke nhung tro choi co doanh thu tai eu > 10 nhung tai JP <10, 
+// in ra ket qua nham muc dich phat trien thi truong o JP nhieu hon tang doanh thu o thi truong JP
+SELECT non empty
+{{[Measures].[EU Sales],[Measures].[JP Sales]}} ON COLUMNS,
+FILTER([Dim Video Games].[Name].[Name],[Measures].[EU Sales]>10) -
+FILTER([Dim Video Games].[Name].[Name],[Measures].[JP Sales]>10)on rows
+from [Data Ware House Videogames Sales];
+

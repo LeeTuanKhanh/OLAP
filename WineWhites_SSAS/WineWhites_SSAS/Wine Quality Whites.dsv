@@ -1,0 +1,77 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="f0799741-4557-4e70-8062-445ac65c37d2" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Wine Quality Whites</ID>
+  <Name>Wine Quality Whites</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+      <Value>1</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+      <Value></Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Wine Quality Whites</DataSourceID>
+  <Schema>
+    <xs:schema id="Wine_x0020_Quality_x0020_Whites" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Wine_x0020_Quality_x0020_Whites" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="66807de4-9897-4984-b68e-4c37ae13f436">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_Clean_Data" msprop:design-time-name="5525167a-8e76-49ef-acc0-644b4eaa5ecf" msprop:DbTableName="Clean_Data" msprop:FriendlyName="Clean_Data" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="ID" msprop:design-time-name="e3e7857a-192b-48b0-9573-cb0b9b81ffb4" msprop:DbColumnName="ID" msprop:FriendlyName="ID" type="xs:short" minOccurs="0" />
+                  <xs:element name="fixed_acidity" msprop:design-time-name="ac44b670-1e39-4780-a4d0-2b0af3545b1d" msprop:DbColumnName="fixed_acidity" msprop:FriendlyName="fixed_acidity" type="xs:double" minOccurs="0" />
+                  <xs:element name="volatile_acidity" msprop:design-time-name="5065e235-4304-4e21-b2fd-3f4b5face9f3" msprop:DbColumnName="volatile_acidity" msprop:FriendlyName="volatile_acidity" type="xs:double" minOccurs="0" />
+                  <xs:element name="citric_acid" msprop:design-time-name="e9eeaf24-db56-4bd0-86b9-3d342179385f" msprop:DbColumnName="citric_acid" msprop:FriendlyName="citric_acid" type="xs:double" minOccurs="0" />
+                  <xs:element name="residual_sugar" msprop:design-time-name="363e77b4-54fd-4672-ba93-f32085f99167" msprop:DbColumnName="residual_sugar" msprop:FriendlyName="residual_sugar" type="xs:double" minOccurs="0" />
+                  <xs:element name="chlorides" msprop:design-time-name="2c6c6ed7-0322-4383-ac2c-72536c7f44f7" msprop:DbColumnName="chlorides" msprop:FriendlyName="chlorides" type="xs:double" minOccurs="0" />
+                  <xs:element name="free_sulfur_dioxide" msprop:design-time-name="234b441a-3b55-4023-86eb-04e6c6f6257e" msprop:DbColumnName="free_sulfur_dioxide" msprop:FriendlyName="free_sulfur_dioxide" type="xs:double" minOccurs="0" />
+                  <xs:element name="total_sulfur_dioxide" msprop:design-time-name="1142ba58-d8fa-46f9-86bb-1a95d31ab4d9" msprop:DbColumnName="total_sulfur_dioxide" msprop:FriendlyName="total_sulfur_dioxide" type="xs:double" minOccurs="0" />
+                  <xs:element name="density" msprop:design-time-name="1f014447-2bc4-4dcf-abc3-53a36d1f3514" msprop:DbColumnName="density" msprop:FriendlyName="density" type="xs:double" minOccurs="0" />
+                  <xs:element name="pH" msprop:design-time-name="fb6b1e73-0752-4dce-ab0c-90ba98607afd" msprop:DbColumnName="pH" msprop:FriendlyName="pH" type="xs:double" minOccurs="0" />
+                  <xs:element name="sulphates" msprop:design-time-name="cfafef8a-47f0-4f75-a032-e128ea23dc5e" msprop:DbColumnName="sulphates" msprop:FriendlyName="sulphates" type="xs:double" minOccurs="0" />
+                  <xs:element name="alcohol" msprop:design-time-name="80c0d1e6-6b41-46e3-acec-fd6dfb2935d6" msprop:DbColumnName="alcohol" msprop:FriendlyName="alcohol" type="xs:double" minOccurs="0" />
+                  <xs:element name="quality" msprop:design-time-name="e3b680f2-c4c6-46aa-80ec-314ffe8e64ee" msprop:DbColumnName="quality" msprop:FriendlyName="quality" type="xs:unsignedByte" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <Wine_x0020_Quality_x0020_Whites xmlns="" />
+  </Schema>
+</DataSourceView>

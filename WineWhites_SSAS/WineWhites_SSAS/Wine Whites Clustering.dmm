@@ -1,0 +1,240 @@
+﻿<MiningStructure xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="8a1522a2-6161-412b-b71d-5745b0474331" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Wine Whites Clustering</ID>
+  <Name>Wine Whites Clustering</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+      <Value>dbo_Clean_Data</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Source xsi:type="DataSourceViewBinding" dwd:design-time-name="5b95dd06-3704-4ab3-a727-fc88676f686d">
+    <DataSourceViewID>Wine Quality Whites</DataSourceViewID>
+  </Source>
+  <Columns>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="4bcc4ad5-044b-46b0-ab72-9caf77df6b77">
+      <ID>Alcohol</ID>
+      <Name>Alcohol</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="c737371f-f860-4e45-b8be-0fbee007545e">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="4854bc3c-81d3-45db-8943-2d99c129797d">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>alcohol</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c4b8159b-c7c3-4f79-bd78-94a4ee2e83ad">
+      <ID>Citric Acid</ID>
+      <Name>Citric Acid</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="686134ee-b8c4-44fc-b445-9638849054ea">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="25885b89-c435-408e-85c9-9c47fbad5d48">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>citric_acid</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="256bd166-d200-4bca-b945-078a724469af">
+      <ID>Fixed Acidity</ID>
+      <Name>Fixed Acidity</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="86aedf9b-2e37-4f50-95bb-d2fe93ac70db">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="97a4dd1b-1a10-4195-b6cf-9c80315d5aa9">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>fixed_acidity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="c6a699b6-f97c-4400-816c-4c8730abb5a5">
+      <ID>ID</ID>
+      <Name>ID</Name>
+      <IsKey>true</IsKey>
+      <Type>Long</Type>
+      <Content>Key</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="1196bf29-992e-40c2-81cf-9aab450cd36c">
+          <DataType>SmallInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="a8ee57f7-bbf2-459c-99ea-636cecae4834">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>ID</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="ab55f239-cdf6-429b-af50-4d5fdb03cfa6">
+      <ID>p H</ID>
+      <Name>p H</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="56a6ed9e-03b6-4d00-95f9-9301bf8e8e4a">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="5955772f-22c3-4ae2-8abd-7e8d1826e253">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>pH</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="f930f235-aca0-4a6b-a3dc-e9f9435d8171">
+      <ID>Quality</ID>
+      <Name>Quality</Name>
+      <Type>Long</Type>
+      <Content>Discrete</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="25b7d713-2426-4063-886f-1c08e092dc24">
+          <DataType>UnsignedTinyInt</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="6246b80d-4a2f-474c-b670-ba35f48cf13b">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>quality</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="49babe3a-a368-4835-9bca-c0e8a5515b18">
+      <ID>Sulphates</ID>
+      <Name>Sulphates</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a2e02a2c-6dbc-4bcc-a0d5-a4856a53af76">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="9f62f072-75de-425f-a8b0-87249afe28f7">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>sulphates</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+    <Column xsi:type="ScalarMiningStructureColumn" dwd:design-time-name="3d034258-dad1-431d-9895-d6063527d385">
+      <ID>Volatile Acidity</ID>
+      <Name>Volatile Acidity</Name>
+      <Type>Double</Type>
+      <Content>Discretized</Content>
+      <KeyColumns>
+        <KeyColumn dwd:design-time-name="a8609e60-8030-43c2-9c4c-fc5ab952540d">
+          <DataType>Double</DataType>
+          <DataSize>-1</DataSize>
+          <Source xsi:type="ColumnBinding" dwd:design-time-name="88d5c9c0-5bc1-4d96-8960-98234cd1fa2d">
+            <TableID>dbo_Clean_Data</TableID>
+            <ColumnID>volatile_acidity</ColumnID>
+          </Source>
+        </KeyColumn>
+      </KeyColumns>
+    </Column>
+  </Columns>
+  <MiningModels>
+    <MiningModel dwd:design-time-name="7d7c1927-066b-48d0-9479-525ea2a286cb">
+      <ID>Wine Whites Clustering</ID>
+      <Name>Wine Whites Clustering</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Algorithm>Microsoft_Clustering</Algorithm>
+      <Columns>
+        <Column dwd:design-time-name="b8402bf9-4407-4713-9445-cbc8b4fe5eb6">
+          <ID>Alcohol</ID>
+          <Name>Alcohol</Name>
+          <SourceColumnID>Alcohol</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9c7b2fe3-17ff-4c1a-92e2-aaed637da92b">
+          <ID>Citric Acid</ID>
+          <Name>Citric Acid</Name>
+          <SourceColumnID>Citric Acid</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="6dd62b21-c3c7-4dd0-a21c-7d5edcd90e54">
+          <ID>Fixed Acidity</ID>
+          <Name>Fixed Acidity</Name>
+          <SourceColumnID>Fixed Acidity</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="52d0c3f9-bce8-4411-8e1a-90708e751c6c">
+          <ID>ID</ID>
+          <Name>ID</Name>
+          <SourceColumnID>ID</SourceColumnID>
+          <Usage>Key</Usage>
+        </Column>
+        <Column dwd:design-time-name="eae82eff-7e00-4a06-8fa6-93438e756559">
+          <ID>p H</ID>
+          <Name>p H</Name>
+          <SourceColumnID>p H</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="7da74eb5-ef6b-4162-abab-cb5c3b33f3f2">
+          <ID>Quality</ID>
+          <Name>Quality</Name>
+          <SourceColumnID>Quality</SourceColumnID>
+          <Usage>PredictOnly</Usage>
+        </Column>
+        <Column dwd:design-time-name="ae73300f-200e-4184-adf3-5c1e9937c799">
+          <ID>Sulphates</ID>
+          <Name>Sulphates</Name>
+          <SourceColumnID>Sulphates</SourceColumnID>
+        </Column>
+        <Column dwd:design-time-name="9a609ca8-7bff-40f2-aec3-c33c1d350a18">
+          <ID>Volatile Acidity</ID>
+          <Name>Volatile Acidity</Name>
+          <SourceColumnID>Volatile Acidity</SourceColumnID>
+        </Column>
+      </Columns>
+    </MiningModel>
+  </MiningModels>
+  <ddl100_100:HoldoutMaxPercent>30</ddl100_100:HoldoutMaxPercent>
+  <ddl100_100:HoldoutMaxCases>1000</ddl100_100:HoldoutMaxCases>
+</MiningStructure>

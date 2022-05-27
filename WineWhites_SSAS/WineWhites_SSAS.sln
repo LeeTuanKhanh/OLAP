@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "WineWhites_SSAS", "WineWhites_SSAS\WineWhites_SSAS.dwproj", "{9403A46A-46D5-4AE2-ADBC-12F9F9C303CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9403A46A-46D5-4AE2-ADBC-12F9F9C303CA}.Development|Default.ActiveCfg = Development
+		{9403A46A-46D5-4AE2-ADBC-12F9F9C303CA}.Development|Default.Build.0 = Development
+		{9403A46A-46D5-4AE2-ADBC-12F9F9C303CA}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {99F5AEA3-BB0E-429C-80D3-E5C3A206AFA7}
+	EndGlobalSection
+EndGlobal

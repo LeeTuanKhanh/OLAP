@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "VideoGames_Sales_SSRS", "VideoGames_Sales_SSRS\VideoGames_Sales_SSRS.rptproj", "{0C007BFF-BC80-4775-9531-C401297F78FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.Debug|Default.ActiveCfg = Debug
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.Debug|Default.Build.0 = Debug
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.Debug|Default.Deploy.0 = Debug
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.DebugLocal|Default.Build.0 = DebugLocal
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.Release|Default.ActiveCfg = Release
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.Release|Default.Build.0 = Release
+		{0C007BFF-BC80-4775-9531-C401297F78FB}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43EC14B4-EB4A-4AF1-BEC9-29C63DD8D9B6}
+	EndGlobalSection
+EndGlobal
